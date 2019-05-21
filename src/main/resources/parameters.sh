@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 HADOOP_USER=root
 HDFS_USER=hdfs
 SLEEP_BETWEEN_RUNS=60
