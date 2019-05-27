@@ -40,5 +40,7 @@ object TeraSort {
     val dataset = sc.newAPIHadoopFile[Array[Byte], Array[Byte], TeraInputFormat](inputFile)
     val sorted = dataset.partitionBy(new TeraSortPartitioner(dataset.partitions.length)).sortByKey()
     sorted.saveAsNewAPIHadoopFile[TeraOutputFormat](outputFile)
+
+    sc.stop()
   }
 }
